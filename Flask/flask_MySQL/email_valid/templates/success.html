@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title>Success Email</title>
+</head>
+
+<body>
+    {% for email in emails %}
+    <h2> The email address you entered ( {{ email['email'] }}) is a VALID email address! Thank you!</h2>
+    {% endfor %}
+    <table>
+        {% for email in emails %}
+        <th>Email Addresses Entered:</th>
+        <tr>
+            <td>{{ email['email'] }} {{ email['created_at'] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
+</body>
+
+</html>

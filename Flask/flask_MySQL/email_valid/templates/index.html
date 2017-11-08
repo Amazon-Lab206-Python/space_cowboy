@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <title>Email</title>
+</head>
+
+<body>
+    <form action='/process' method="POST">
+        <label for="email"> Email Address:
+            <input type="email" name="email" id="email">
+            <input type="submit" value="Submit">
+    </form>
+    {% with error_messages = get_flashed_messages() %}
+    {% if error_messages %}
+    {% for message in error_messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</body>
+
+</html>

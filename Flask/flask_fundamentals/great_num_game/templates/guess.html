@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <h2>I am thinking of a number between 1 and 100</h2>
+    <h3>Take a guess!</h3>
+    <p>{{x}}</p>
+    <form action='/info' method="POST">
+        <input type="number" name='number'>
+        <input type="submit">
+    </form>
+    {% if session['number'] == session['x'] %}
+    <p>You did it!</p>
+    {% elif session['number'] < session['x'] %}
+    <p>Down low, too slow</p>
+    {% elif session['number'] > session['x'] %}
+    <p>You high af right now my dude</p>
+    {% endif %}
+</body>
+</html>

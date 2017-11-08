@@ -3,13 +3,13 @@ from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 
 @app.route('/')
-def show_user_profile():
+def index():
     return render_template("index.html")
 
 @app.route('/process', methods=['POST'])
-def account():
+def process_form():
     print request.form
-    return render_template('/index.html')
+    return render_template('/')
 
 
 app.run(debug=True)

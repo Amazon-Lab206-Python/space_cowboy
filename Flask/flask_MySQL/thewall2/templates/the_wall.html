@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Success Page for My Awesome App</title>
+</head>
+
+<body>
+    <p>Welcome, {{ user.first_name}}</p>
+    <form action="/posts" method="post">
+        <div class="">
+            <label>Post a Message:</label>
+        </div>
+        <div class="">
+            <textarea name="post_text" rows="8" cols="40"></textarea>
+        </div>
+        <div class="">
+            <input type="submit" value="Add Post">
+        </div>
+    </form>
+
+    {% for post in posts %}
+    <div>
+        {{post.first_name}} {{post.last_name}} - {{post.created_at}}
+        <p>
+            {{post.post_text}}
+        </p>
+        {% for comment in comments %}
+        {% if comment.post_id == post.post_id %}
+        {{ comment.first_name}} {{comment.last_name}} - {{ comment.created_at }}
+        <P>
+            {{ comment.comment_text}}
+        </P>
+        {% endif %}
+        {% endfor %}
+        <form action="/comments/{{post.post_id}}" method="post">
+            <div class="">
+                <label>Post a Comment:</label>
+            </div>
+            <div class="">
+                <textarea name="comment_text" rows="8" cols="40"></textarea>
+            </div>
+            <div class="">
+                <input type="submit" value="Add Comment">
+            </div>
+        </form>
+    </div>
+    {% endfor%}
+    <a href="/logout">
+        <button type="button" name "button">Logout</button>
+        </button>
+    </a>
+</body>
+
+</html>
