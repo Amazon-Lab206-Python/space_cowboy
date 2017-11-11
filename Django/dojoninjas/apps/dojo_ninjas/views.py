@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from IPython import embed
 from .models import Dojo
@@ -45,3 +46,9 @@ def form_process(request):
 
 #     }
 #     return redirect('/')
+=======
+
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> 144a8482319f5d16d72944556782b98b4e198ad6
