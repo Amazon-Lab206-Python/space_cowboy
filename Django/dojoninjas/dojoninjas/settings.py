@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
+    'apps.book_authors',
+=======
+>>>>>>> 144a8482319f5d16d72944556782b98b4e198ad6
     'apps.dojo_ninjas',
     'django.contrib.admin',
     'django.contrib.auth',

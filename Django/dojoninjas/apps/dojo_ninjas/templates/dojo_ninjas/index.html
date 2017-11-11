@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Ninjas</title>
+</head>
+
+<body>
+    <div class="top">
+        <h1>Building this page while practicing along with video lecture</h1>
+        <p> This has been super helfpul for me to really concrete learn the material</p>
+        <p>https://www.youtube.com/watch?v=rMuJsYBQ1aw</p>
+    </div>
+    <h3>Welcome to my Index Page</h3>
+    {{dojos}} 
+    {% for dojo in dojos %} 
+        {{ dojo.city}} 
+    {% endfor %}
+
+
+    Form for creating an Dojo
+    <div class="generic_form">
+        <form action="/dojo/create" method="POST">
+            {% csrf_token %}
+            Name:<input type="text" name="name">
+            <br> 
+            City:<input type="text" name="city">
+            <br> 
+            State:<input type="text" name="state">
+            <br> 
+            Description:<input type="text" name="desc">
+            <br>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+
+</html>
